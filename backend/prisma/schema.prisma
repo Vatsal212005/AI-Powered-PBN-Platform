@@ -1,0 +1,69 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Domain {
+  id         String    @id @default(cuid())
+  slug       String    @unique
+  name       String
+  url        String?
+  tags       String?
+  created_at DateTime  @default(now())
+  articles   Article[]
+}
+
+model Article {
+  id                  String           @id @default(cuid())
+  slug                String           @unique
+  created_at          DateTime         @default(now())
+  domain_id           String?
+  selected_version_id String?          @unique
+  updated_at          DateTime         @updatedAt
+  user                String?
+  status              String
+  anchor              String?
+  backlink_target     String?
+  keyword             String?
+  niche               String?
+  topic               String?
+  internal_links      Boolean          @default(false)
+  backlink_expiry     DateTime?
+  versions            ArticleVersion[] @relation("AllVersions")
+  domain              Domain?          @relation(fields: [domain_id], references: [id], onDelete: Cascade)
+  selected_version    ArticleVersion?  @relation("SelectedVersion", fields: [selected_version_id], references: [id])
+
+  @@map("articles")
+}
+
+model ArticleVersion {
+  id             String   @id @default(cuid())
+  article_id     String
+  version_num    Int
+  content_md     String
+  created_at     DateTime @default(now())
+  last_qc_notes  Json?
+  last_qc_status String?
+  prompt         String?
+  qc_attempts    Int      @default(0)
+  article        Article  @relation("AllVersions", fields: [article_id], references: [id], onDelete: Cascade)
+  selected_for   Article? @relation("SelectedVersion")
+
+  @@unique([article_id, version_num])
+  @@map("article_versions")
+}
+
+enum ArticleStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+  PENDING
+  FLAGGED_BY_AI
+  APPROVED_BY_AI
+  GENERATED
+}

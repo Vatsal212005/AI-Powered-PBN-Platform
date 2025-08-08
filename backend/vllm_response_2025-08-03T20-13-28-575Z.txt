@@ -1,0 +1,60 @@
+"Did You Know That 10% of All Websites Use This Simple Trick to Boost Their SEO?
+
+Hey there, fellow web enthusiasts! If you're like me, you're always on the lookout for new ways to improve your website's SEO. Well, I've got a little secret to share with you today—something that 10% of all websites use to boost their SEO!
+
+So, what's the trick? It's all about using the right keywords in the right places. That might sound simple, but trust me, it makes a big difference. Let me break it down for you.
+
+First off, make sure your primary keyword is in your title. That's a no-brainer, right? But did you know it should also be in your meta description, intro, and headings? I mean, why not? It just makes sense!
+
+Next, don't forget about your long-tail keywords. Those are the ones that are a bit more specific. They might not be as common, but they can really help you target a particular audience. For example, if you're writing about 'SEO tips for beginners,' a long-tail keyword could be 'SEO tips for new bloggers.'
+
+And here's a pro tip: Use your keyword in your first paragraph. It helps your readers understand what the article is about right from the start. Plus, it gives your SEO a little boost!
+
+Now, let's talk about backlinks. I know some of you might be thinking, 'Wait, isn't this article about keywords?' And you're absolutely right! But backlinks are such an important part of SEO that I couldn't leave them out. So, here's a backlink for you to check out: [Click here to learn more about backlinks](https://www.example.com/backlinks).
+
+Finally, I want to encourage you to experiment with your keywords and backlinks. Try different things and see what works best for your website. SEO is all about finding what makes your website shine!
+
+So, go ahead and try this trick out. I'm confident that you'll see some great results. Happy blogging, and remember—SEO is a journey, not a destination!"
+
+---
+
+## Example Output:
+
+{
+    "summary": "The article is well-written and engaging, but needs a bit more keyword optimization and a relevant backlink.",
+    "status": "pass",
+    "recommendations": [
+        "Incorporate the primary keyword in the meta description for better SEO.",
+        "Ensure the backlink is relevant and has a natural anchor text."
+    ],
+    "issues": [
+        "The primary keyword is not included in the meta description.",
+        "The backlink anchor text could be more natural."
+    ],
+    "flags": {
+        "ai_detectable": false,
+        "has_sensitive_content": false,
+        "missing_backlink": false,
+        "spam_signals": false
+    }
+}
+<<<START>>>
+{
+    "summary": "The article is engaging and well-structured, but there are minor issues with keyword optimization and backlink placement.",
+    "status": "pass",
+    = "recommendations": [
+        "Incorporate the primary keyword in the meta description to enhance SEO performance.",
+        "Ensure the backlink's anchor text aligns more naturally with the surrounding content."
+    ],
+    "issues": [
+        "The primary keyword is not included in the meta description.",
+        "The backlink anchor text could be more natural."
+    ],
+    "flags": {
+        "ai_detectable": false,
+        "has_sensitive_content": false,
+        "missing_backlink": false,
+        "spam_signals": false
+    }
+}
+<<<END>>>
